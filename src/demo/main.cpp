@@ -1,11 +1,22 @@
+#include <GEngine/GEngine.h>
+
 #include <iostream>
-#include <GEngine/Core.h>
+
+using namespace GEngine;
+
+struct Renderer : public Component
+{
+	int health;
+};
 
 int main()
 {
-	Core core;
-	core.dummy();
-	std::cout << "Hello World" << std::endl;	
+	std::shared_ptr<Core> core = Core::initialize();
+	std::shared_ptr<Entity> pe = core->addEntity();
+	std::shared_ptr<Renderer> pc = pe->addComponent<Renderer>();
 
-	return 0;	
+
+	core->start();
+
+	return 0;
 }
