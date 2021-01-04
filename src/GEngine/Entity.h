@@ -1,5 +1,6 @@
 #include <vector>
 #include <memory>
+#include <string>
 
 #include "Component.h"
 #include "Transform.h"
@@ -8,12 +9,28 @@ namespace GEngine
 {
 	struct Component;
 	struct Core;
+	struct Transform;
 
 
 	struct Entity
 	{
 		friend struct GEngine::Core; // added namespace as a safeguard
 
+		
+		template <typename T, typename ... Args>
+		std::shared_ptr<T> addComponent(Args&&... args)
+		{
+			std::shared_ptr<T> rtn = std::make_shared<T>();
+			rtn->entity = self;
+
+			components.push_back(rtn);
+
+			rtn->onInitialize(std::forward<Args>(args)...); //this on initialize.
+
+			return rtn;
+		}
+		
+		
 		template <typename T>
 		std::shared_ptr<T> addComponent()
 		{
@@ -21,11 +38,24 @@ namespace GEngine
 			rtn->entity = self;
 
 			components.push_back(rtn);
-		
+			
 			rtn->onInitialize(); //this on initialize.
 
 			return rtn;
 		}
+
+		template <typename T>
+		std::shared_ptr<T> addComponent(const std::string& _path)
+		{
+			std::shared_ptr<T> rtn = std::make_shared<T>();
+			rtn->entity = self;
+
+			components.push_back(rtn);
+
+			rtn->onInitialize(_path); //this on initialize.
+
+			return rtn;
+		} // this is done to enable the function call with a paramter(from sources).
 
 		template <typename T>
 		std::shared_ptr<T> getComponent()

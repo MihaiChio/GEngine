@@ -6,28 +6,30 @@
 #endif
 namespace GEngine
 {
-		Core* c;
+		std::weak_ptr<Core> _core; // to avoid a loop problem with emscripten.
 		std::shared_ptr<Core> Core::initialize()
 		{
-			
+
 			std::shared_ptr<Core> rtn = std::make_shared<Core>();
 			rtn->self = rtn;	// rtn REPRESENTS AN INSTANCE OF CORE.
 			rtn->screen = std::make_shared<Screen>();
 
 			rtn->initialiseSDL(rtn);
+			rtn->initializeOpenAL(rtn);
+			rtn->AM = std::make_shared<AssetManager>(); //
+			rtn->keyB = std::make_shared<Keyboard>();
+
+			_core = rtn;
 			return rtn;
 		}
 
 		std::shared_ptr<Entity> Core::addEntity()
 		{
 			std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
-
-			std::shared_ptr<Transform> transComp = rtn->addComponent<Transform>();
-			// adding "transComp" to Entity.
-
 			rtn->core = self;
 			//This is making sure that THIS core is being used without raw pointers.
-
+			std::shared_ptr<Transform> transComp = rtn->addComponent<Transform>();
+			// adding "transComp" to Entity.
 			rtn->self = rtn;
 			//similar to THIS but with weak pointers.
 
@@ -61,6 +63,36 @@ namespace GEngine
 			
 		}
 
+		void Core::initializeOpenAL(std::shared_ptr<Core> _rtn)
+		{
+			_rtn->device = alcOpenDevice(NULL);
+
+			if (!_rtn->device)
+			{
+				throw rend::Exception("No device found");
+			}
+			_rtn->contextAud = alcCreateContext(_rtn->device, NULL); // select the the preffered device.
+
+			if (!_rtn->contextAud)
+			{
+				alcCloseDevice(_rtn->device);
+			//exception
+			}
+
+			if (!alcMakeContextCurrent(_rtn->contextAud))
+			{
+				alcDestroyContext(_rtn->contextAud);
+				alcCloseDevice(_rtn->device);
+				//exception
+			}
+
+			//has to be closed after use.
+
+			// alcMakeContextCurrent(NULL);
+			// alcDestroyContext(context);
+			// alcCloseDevice(device);
+		}
+
 		 void Core::loop()
 		{
 			bool isRunning = true;
@@ -72,25 +104,33 @@ namespace GEngine
 				{
 					isRunning = false;
 				}
+				else if (e.type == SDL_KEYDOWN)
+				{
+					_core.lock()->keyB->keys.push_back(e.key.keysym.sym);
+				}
+				else if (e.type == SDL_KEYUP)
+				{
+					_core.lock()->keyB->removeKey(e.key.keysym.sym);
+				}
 			}
-			for (size_t ei = 0; ei < c->entities.size(); ei++)
+			for (size_t ei = 0; ei < _core.lock()->entities.size(); ei++)
 			{
-				c->entities.at(ei)->tick();
+				_core.lock()->entities.at(ei)->tick();
 			}
 			glClearColor(0.39f, 0.58f, 0.93f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-			for (size_t ei = 0; ei < c->entities.size(); ei++)
+			for (size_t ei = 0; ei < _core.lock() ->entities.size(); ei++)
 			{
-				c->entities.at(ei)->render();
+				_core.lock()->entities.at(ei)->render();
 			}
 
-			SDL_GL_SwapWindow(c->window);
+			SDL_GL_SwapWindow(_core.lock()->window);
 		}
 
 		void Core::start() // main loop.
 		{
-			c = this;
+			//c = this;
 			#ifdef EMSCRIPTEN
 			
 						emscripten_set_main_loop(Core::loop, 0, 1);	
@@ -115,7 +155,17 @@ namespace GEngine
 
 		 std::shared_ptr<Screen> Core::getScreen()
 		 {
-			 return screen;
+			 return self.lock()->screen;
+		 }
+
+		 std::shared_ptr<AssetManager> Core::getAM()
+		 {
+			 return self.lock()->AM;
+		 }
+
+		 std::shared_ptr<Keyboard> Core::getKeyboard()
+		 {
+			 return self.lock()->keyB;
 		 }
 
 

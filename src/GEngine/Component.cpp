@@ -1,5 +1,6 @@
 #include "Component.h"
 #include "Entity.h"
+#include "Core.h"
 
 namespace GEngine
 {
@@ -28,5 +29,21 @@ namespace GEngine
 		return getEntity()->getCore(); //kinda shortc
 	}
 
+	glm::mat4 Component::getModelMatrix()
+	{
+		return getEntity()->getComponent<Transform>()->getModelMatrix();
+	}
+
+	glm::mat4 Component::getProjectionMatrix()
+	{
+		return getEntity()->getCore()->getScreen()->getProjectionMatrix();
+	}
+
+
+
+
+
+	
+	
 	
 }

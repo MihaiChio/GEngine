@@ -5,6 +5,7 @@
 #include "Entity.h"
 #include "Component.h"
 #include "Renderer.h"
+#include "soundSource.h"
 
 using namespace GEngine;
 

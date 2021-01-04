@@ -9,6 +9,7 @@ add_definitions(-DSDL_MAIN_HANDLED)
 include_directories(
  src
  ${CMAKE_SOURCE_DIR}/contrib/SDL2/include
+ ${CMAKE_SOURCE_DIR}/contrib
 
 )
 
@@ -21,15 +22,12 @@ if(MSVC)
  )
 else()
  # this is done so emscripten can use its own SDL2
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_SDL=2") 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s USE_SDL=2") 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s DISABLE_EXCEPTION_CATCHING=0")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s DISABLE_EXCEPTION_CATCHING=0")
 endif()
 link_directories(${CMAKE_SOURCE_DIR}/contrib/SDL2/lib/x64)
-
-
-
-
+link_directories(${CMAKE_SOURCE_DIR}/contrib/openal-soft/libs)
 
 
 add_library(rend
@@ -52,6 +50,13 @@ add_library(GEngine
 	src/GEngine/Renderer.cpp
 	src/GEngine/Transform.cpp	
 	src/GEngine/Screen.cpp
+	src/GEngine/Resource.cpp
+	src/GEngine/Texture.cpp
+	src/GEngine/Sound.cpp
+	src/GEngine/AssetManager.cpp
+	src/GEngine/soundSource.cpp
+	src/GEngine/Keyboard.cpp
+	src/GEngine/Camera.cpp
 
 	src/GEngine/Core.h
 	src/GEngine/Component.h
@@ -60,6 +65,14 @@ add_library(GEngine
 	src/GEngine/Renderer.h
 	src/GEngine/Transform.h
 	src/GEngine/Screen.h
+	src/GEngine/Resource.h
+	src/GEngine/Texture.h
+	src/GEngine/Sound.h
+	src/GEngine/AssetManager.h
+	src/GEngine/soundSource.h
+	src/GEngine/Keyboard.h
+	src/GEngine/Camera.h
+
 )
 
 
@@ -74,7 +87,7 @@ target_link_libraries(demo GEngine)
 target_link_libraries(demo SDL2)
 
 if(MSVC OR MINGW)
-  target_link_libraries(rend glew32 opengl32)
+  target_link_libraries(rend glew32 opengl32 OpenAL32)
 else()
   target_link_libraries(rend GLEW GL)
 endif()
