@@ -13,4 +13,12 @@ namespace GEngine
 	{
 		return path;
 	}
+	void Resource::setRes(std::weak_ptr<AssetManager> _resource)
+	{
+		resources = _resource;
+	}
+	std::weak_ptr<AssetManager> Resource::getAM()
+	{
+		return resources;
+	}
 }

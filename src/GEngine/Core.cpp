@@ -17,6 +17,8 @@ namespace GEngine
 			rtn->initialiseSDL(rtn);
 			rtn->initializeOpenAL(rtn);
 			rtn->AM = std::make_shared<AssetManager>(); //
+			rtn->AM->setCore(rtn);
+			rtn->AM->setSelf(rtn->AM); // sets asset manager self to the one refered in here.
 			rtn->keyB = std::make_shared<Keyboard>();
 
 			_core = rtn;
@@ -119,10 +121,17 @@ namespace GEngine
 			}
 			glClearColor(0.39f, 0.58f, 0.93f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-			for (size_t ei = 0; ei < _core.lock() ->entities.size(); ei++)
+			glViewport(0, 0, _core.lock()->screen->getResX(), _core.lock()->screen->getResY());
+			//TODO CAMERA IMPLEMENT
+			for (size_t ci = 0; ci < _core.lock()->cameraVec.size(); ci++)
 			{
-				_core.lock()->entities.at(ei)->render();
+				_core.lock()->curCam = _core.lock()->cameraVec.at(ci);
+				glClear(GL_DEPTH_BUFFER_BIT);
+				for (size_t ei = 0; ei < _core.lock()->entities.size(); ei++)
+				{
+					_core.lock()->entities.at(ei)->render();
+				}
+				glViewport(0, 0, 300, 300);
 			}
 
 			SDL_GL_SwapWindow(_core.lock()->window);
@@ -161,6 +170,11 @@ namespace GEngine
 		 std::shared_ptr<AssetManager> Core::getAM()
 		 {
 			 return self.lock()->AM;
+		 }
+
+		 std::shared_ptr<Camera> Core::getCam()
+		 {
+			 return curCam.lock();
 		 }
 
 		 std::shared_ptr<Keyboard> Core::getKeyboard()

@@ -1,6 +1,8 @@
 #include "Renderer.h"
 #include "Core.h"
 #include "Entity.h"
+#include "Exception.h"
+#include "Model.h"
 
 #include <iostream>
 #include <fstream>
@@ -46,23 +48,10 @@ namespace GEngine
 
 		shape = getCore()->context->createMesh();
 
-		std::ifstream file("../curuthers/curuthers.obj");
-		if (!file.is_open())
-		{
-			throw rend::Exception("Failed to find file");
-		}
-
-		std::string content;
-		std::string line; // expensive if left in a while loop.
-		while (!file.eof())
-		{
-			std::getline(file, line);
-
-			content += line + "\n"; // without the New line the loader won't know how to properly render the model.
-		}
-
-		shape->parse(content); //takes the data from the file not the path.
-
+		std::shared_ptr<Model> object = getCore()->getAM()->load<Model>("../curuthers/curuthers");
+		shape = object->getMesh();
+		//Creates Object.
+		//TODO  - move shader and model into their own loader.
 	}
 
 	void Renderer::onRender()

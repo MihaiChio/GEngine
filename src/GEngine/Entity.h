@@ -71,6 +71,10 @@ namespace GEngine
 				{
 					return rtn;
 				}
+				else
+				{
+					return NULL;
+				}
 
 			}
 		}

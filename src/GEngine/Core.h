@@ -12,17 +12,22 @@
 
 namespace GEngine
 {
+	///FORWARD DECLARE
 	struct Transform;
 	struct Renderer;
 	struct Entity;
+	struct Camera;
+	struct Model;
 
 	/**
-	* Engine base class, essential classes, libraries and resources are linked and executed here.
+	* Engine base class, essential classes, managers and resources are linked and executed here.
+	* This is needed for the engine to work.
 	*/
 
 	struct Core
 	{
-		friend struct GEngine::Renderer;
+		friend struct GEngine::Renderer; //friend structs limiting the access
+		friend struct GEngine::Model; //but gives full access to specified classes.
 		static std::shared_ptr<Core> initialize();
 
 
@@ -34,18 +39,28 @@ namespace GEngine
 		std::shared_ptr<Screen> getScreen();
 		std::shared_ptr<AssetManager> getAM();
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Camera> getCam();
 		static void loop();
 
 	private:
+
+		friend struct GEngine::Camera;
 		std::shared_ptr<Keyboard> keyB;
 		std::shared_ptr<AssetManager> AM;
 		std::vector<std::shared_ptr<Entity>> entities; // only needs to know that the "entity" struct exists. HAS TO BE DEFINED BEFORE ACCESSED.
+		std::vector <std::weak_ptr<Camera>> cameraVec;
+		std::weak_ptr<Camera> curCam;
 		std::weak_ptr<Core> self;
+
+		//SDL 
 		SDL_Window* window;
 		SDL_GLContext glContext;
 		std::shared_ptr<rend::Context> context;
 		//private constructors do not allow the user to use new and only allows the class to initialise it.
 		std::shared_ptr<Screen> screen;
+		//
+
+
 		//creating the audio variables 
 		ALCdevice* device;
 		ALCcontext* contextAud;

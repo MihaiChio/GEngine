@@ -31,12 +31,12 @@ namespace GEngine
 
 	glm::mat4 Component::getModelMatrix()
 	{
-		return getEntity()->getComponent<Transform>()->getModelMatrix();
+		return getEntity()->getComponent<Transform>()->getModelMatrix(); //shortcut
 	}
 
 	glm::mat4 Component::getProjectionMatrix()
 	{
-		return getEntity()->getCore()->getScreen()->getProjectionMatrix();
+		return getEntity()->getCore()->getScreen()->getProjectionMatrix(); //shortcut
 	}
 
 

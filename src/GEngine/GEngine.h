@@ -6,6 +6,11 @@
 #include "Component.h"
 #include "Renderer.h"
 #include "soundSource.h"
+#include "Camera.h"
+#include "Exception.h"
+#include "AssetManager.h"
+
+#include <rend/rend.h>
 
 using namespace GEngine;
 

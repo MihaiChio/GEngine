@@ -3,8 +3,12 @@
 #include <vector>
 #include "Resource.h"
 
+
 namespace GEngine
 {
+/**
+* Class used by sound source to load soundfiles.[.ogg].
+*/
 	struct Sound : public Resource
 	{
 		ALuint getID();

@@ -9,6 +9,9 @@ namespace GEngine
 	{
 		void onInitialize(const std::string _path);
 		void onTick();
+		void playSound();
+		void deleteSound();
+		bool isPlaying();
 
 	private:
 		ALuint soundID;		

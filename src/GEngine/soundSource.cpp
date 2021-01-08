@@ -13,16 +13,37 @@ namespace GEngine
 	
 		alGenSources(1, &soundID);
 		alSourcei(soundID, AL_BUFFER, sound->getID());
-		alSourcePlay(soundID);
+		//alSourcePlay(soundID);
 	}
 
 	void soundSource::onTick()
 	{
 		ALint state = 0;
 
-		//Delete stuff if not used anymore .
-		//TODO IMPLEMENT DELETE
+		//Delete stuff if not used anymore.
 	}
+	void soundSource::playSound()
+	{
+		if(!isPlaying())
+		{
+			alSourcePlay(soundID);
+		}
+	}
+	//todo Delete, Play, 
+	bool soundSource::isPlaying()
+	{
+		ALenum state = 0;
+		alGetSourcei(soundID, AL_SOURCE_STATE, &state);
+		return(state == AL_PLAYING);
+	}
+
+	void soundSource::deleteSound()
+	{
+		alDeleteSources(1, &soundID);
+	}
+
+
+
 }
 
 

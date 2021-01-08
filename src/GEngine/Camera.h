@@ -1,5 +1,4 @@
 #include "Component.h"
-
 #include <rend/rend.h>
 
 namespace GEngine
@@ -7,10 +6,7 @@ namespace GEngine
 	struct Camera : public Component
 	{
 		void onInitialize();
-
 		rend::mat4 getView();
-		//getRenderTex
-		//AddRenderTex
 
 
 	private:

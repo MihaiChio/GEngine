@@ -22,4 +22,5 @@ namespace GEngine
 	{
 		return core.lock();
 	}
+	//TODO - implement delete function.
 }
