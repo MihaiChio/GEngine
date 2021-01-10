@@ -1,3 +1,6 @@
+#ifndef RESOURCE_H
+#define RESOURCE_H
+
 #include <string>
 #include "AssetManager.h"
 
@@ -17,3 +20,4 @@ namespace GEngine
 		std::weak_ptr<AssetManager> resources;
 	};
 }
+#endif

@@ -1,0 +1,122 @@
+\hypertarget{struct_g_engine_1_1_entity}{}\doxysection{G\+Engine\+::Entity Struct Reference}
+\label{struct_g_engine_1_1_entity}\index{GEngine::Entity@{GEngine::Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename ... Args$>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_ae2bdca6feed0715ab892725e4f7eedc7}{add\+Component}} (Args \&\&... args)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a6c8c8ec16c6f24826ac801dc5811f6e3}{add\+Component}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a3c38b12883e01463274b4459ae83352e}{add\+Component}} (const std\+::string \&\+\_\+path)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_ab40315a27abc1a563460c344405e9c72}{get\+Component}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_entity_afa3fb9882ea5fc778f5ed3a0ca370554}{render}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_entity_a3f5100eaeea6d3eabde9906ad7777455}{tick}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a2e25504610644ff2845a4c9e80731861}{get\+Core}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a05a464c1c64d4af5056805bd3d7802c6}{core}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a9601af36a17d01ef12ef9d7055b81322}{components}}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_entity_a8ef85491c2b5dd0cb016f63318173171}{self}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_engine_1_1_entity_a6708612946f87754f54fc287b3f329c0}{G\+Engine\+::\+Core}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a6c8c8ec16c6f24826ac801dc5811f6e3}\label{struct_g_engine_1_1_entity_a6c8c8ec16c6f24826ac801dc5811f6e3}} 
+\index{GEngine::Entity@{GEngine::Entity}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ G\+Engine\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_ae2bdca6feed0715ab892725e4f7eedc7}\label{struct_g_engine_1_1_entity_ae2bdca6feed0715ab892725e4f7eedc7}} 
+\index{GEngine::Entity@{GEngine::Entity}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename ... Args$>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ G\+Engine\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a3c38b12883e01463274b4459ae83352e}\label{struct_g_engine_1_1_entity_a3c38b12883e01463274b4459ae83352e}} 
+\index{GEngine::Entity@{GEngine::Entity}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ G\+Engine\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_ab40315a27abc1a563460c344405e9c72}\label{struct_g_engine_1_1_entity_ab40315a27abc1a563460c344405e9c72}} 
+\index{GEngine::Entity@{GEngine::Entity}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ G\+Engine\+::\+Entity\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a2e25504610644ff2845a4c9e80731861}\label{struct_g_engine_1_1_entity_a2e25504610644ff2845a4c9e80731861}} 
+\index{GEngine::Entity@{GEngine::Entity}!getCore@{getCore}}
+\index{getCore@{getCore}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{getCore()}{getCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ G\+Engine\+::\+Entity\+::get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_afa3fb9882ea5fc778f5ed3a0ca370554}\label{struct_g_engine_1_1_entity_afa3fb9882ea5fc778f5ed3a0ca370554}} 
+\index{GEngine::Entity@{GEngine::Entity}!render@{render}}
+\index{render@{render}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Entity\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a3f5100eaeea6d3eabde9906ad7777455}\label{struct_g_engine_1_1_entity_a3f5100eaeea6d3eabde9906ad7777455}} 
+\index{GEngine::Entity@{GEngine::Entity}!tick@{tick}}
+\index{tick@{tick}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Entity\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a6708612946f87754f54fc287b3f329c0}\label{struct_g_engine_1_1_entity_a6708612946f87754f54fc287b3f329c0}} 
+\index{GEngine::Entity@{GEngine::Entity}!GEngine::Core@{GEngine::Core}}
+\index{GEngine::Core@{GEngine::Core}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{GEngine::Core}{GEngine::Core}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_g_engine_1_1_core}{G\+Engine\+::\+Core}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a9601af36a17d01ef12ef9d7055b81322}\label{struct_g_engine_1_1_entity_a9601af36a17d01ef12ef9d7055b81322}} 
+\index{GEngine::Entity@{GEngine::Entity}!components@{components}}
+\index{components@{components}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_component}{Component}}$>$ $>$ G\+Engine\+::\+Entity\+::components\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a05a464c1c64d4af5056805bd3d7802c6}\label{struct_g_engine_1_1_entity_a05a464c1c64d4af5056805bd3d7802c6}} 
+\index{GEngine::Entity@{GEngine::Entity}!core@{core}}
+\index{core@{core}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{core}{core}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_core}{Core}}$>$ G\+Engine\+::\+Entity\+::core\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_entity_a8ef85491c2b5dd0cb016f63318173171}\label{struct_g_engine_1_1_entity_a8ef85491c2b5dd0cb016f63318173171}} 
+\index{GEngine::Entity@{GEngine::Entity}!self@{self}}
+\index{self@{self}!GEngine::Entity@{GEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{self}{self}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}}$>$ G\+Engine\+::\+Entity\+::self\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+G\+Engine/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/\+G\+Engine/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

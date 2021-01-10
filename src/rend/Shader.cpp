@@ -347,7 +347,9 @@ void Shader::parse(const std::string& source)
   std::string fragSrc = "";
   //fragSrc += "#version 120\n";
   fragSrc += "#define FRAGMENT\n";
+#ifdef EMSCRIPTEN
   fragSrc += "precision mediump float;\n";
+#endif 
   fragSrc += source;
   src = fragSrc.c_str();
 

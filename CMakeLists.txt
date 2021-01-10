@@ -57,6 +57,9 @@ add_library(GEngine
 	src/GEngine/soundSource.cpp
 	src/GEngine/Keyboard.cpp
 	src/GEngine/Camera.cpp
+	src/GEngine/Model.cpp
+	src/GEngine/Exception.cpp
+	src/GEngine/Shader.cpp
 
 	src/GEngine/Core.h
 	src/GEngine/Component.h
@@ -72,6 +75,9 @@ add_library(GEngine
 	src/GEngine/soundSource.h
 	src/GEngine/Keyboard.h
 	src/GEngine/Camera.h
+	src/GEngine/Model.h
+	src/GEngine/Exception.h
+	src/GEngine/Shader.h
 
 )
 

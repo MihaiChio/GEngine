@@ -1,0 +1,236 @@
+\hypertarget{struct_g_engine_1_1_core}{}\doxysection{G\+Engine\+::Core Struct Reference}
+\label{struct_g_engine_1_1_core}\index{GEngine::Core@{GEngine::Core}}
+
+
+{\ttfamily \#include $<$Core.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a0300d45a700cb2519e2809ecf782cba8}{add\+Entity}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_core_acfa06d27625bdf3b3c3547b33e10b25e}{initialise\+S\+DL}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \+\_\+rtnu)
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_core_a6ed14a1a1bd97a55881b6cd54405a50d}{initialize\+Open\+AL}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \+\_\+rtn)
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_core_a80fd28d2e49f9da7ffa27dbd2f33087c}{start}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_core_af6b33233ae85f17b5d70a071177d6ad7}{exit}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_screen}{Screen}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_ad3a465487c3d3b3da7a4ff2db81a8c61}{get\+Screen}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_asset_manager}{Asset\+Manager}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_ac068856f3683518b3d65b2376b406da9}{get\+AM}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_keyboard}{Keyboard}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_ad4b001c93518f9e206103895eaaeec8e}{get\+Keyboard}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a4d6394ab447ea86e53bf7140a1f07d5c}{get\+Cam}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a6606c56b1ee4995956e46c1a0034371a}{initialize}} ()
+\item 
+static void \mbox{\hyperlink{struct_g_engine_1_1_core_ae0d31f9e1782037dbf22ba61d353bb15}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_keyboard}{Keyboard}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a72b669e73168af4147198e3aa09b3ef9}{keyB}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_asset_manager}{Asset\+Manager}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_addc033e6bd7ef8d656d3ad0c8ec8a851}{AM}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a2ba9bd8da09cd7c81ef3bdff54d1aeda}{entities}}
+\item 
+std\+::vector$<$ std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}} $>$ $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a6cf11c6f4b4e93d3e5f54816992dbf65}{camera\+Vec}}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_aeeca5dca2d5d9f02de6e00b83672f05b}{cur\+Cam}}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a10d2fc69ace746f8ba4172d4796ebc50}{self}}
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{struct_g_engine_1_1_core_a3fc9f79e395c75a92a0d294d06dc46d3}{window}}
+\item 
+S\+D\+L\+\_\+\+G\+L\+Context \mbox{\hyperlink{struct_g_engine_1_1_core_a2703774d1c1529cf51924e0cb0e7a508}{gl\+Context}}
+\item 
+std\+::shared\+\_\+ptr$<$ rend\+::\+Context $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a84962b1599632042fe86fde0f5698723}{context}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_screen}{Screen}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_core_a87f7c355794432644fdaa4192153160b}{screen}}
+\item 
+A\+L\+Cdevice $\ast$ \mbox{\hyperlink{struct_g_engine_1_1_core_a947118da6d3f7673525d6f7de4b836e3}{device}}
+\item 
+A\+L\+Ccontext $\ast$ \mbox{\hyperlink{struct_g_engine_1_1_core_a0e4aaaa683a717c273aba0a40da5adc0}{context\+Aud}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_engine_1_1_core_a74b7bea37f9b8598a3c2a0af0437d920}{G\+Engine\+::\+Renderer}}
+\item 
+struct \mbox{\hyperlink{struct_g_engine_1_1_core_aeaa328bd2fab5354d90d83617fbcef5a}{G\+Engine\+::\+Camera}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Engine base class, essential classes, managers and resources are linked and executed here. This is needed for the engine to work. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a0300d45a700cb2519e2809ecf782cba8}\label{struct_g_engine_1_1_core_a0300d45a700cb2519e2809ecf782cba8}} 
+\index{GEngine::Core@{GEngine::Core}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ G\+Engine\+::\+Core\+::add\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_af6b33233ae85f17b5d70a071177d6ad7}\label{struct_g_engine_1_1_core_af6b33233ae85f17b5d70a071177d6ad7}} 
+\index{GEngine::Core@{GEngine::Core}!exit@{exit}}
+\index{exit@{exit}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Core\+::exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_ac068856f3683518b3d65b2376b406da9}\label{struct_g_engine_1_1_core_ac068856f3683518b3d65b2376b406da9}} 
+\index{GEngine::Core@{GEngine::Core}!getAM@{getAM}}
+\index{getAM@{getAM}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{getAM()}{getAM()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_asset_manager}{Asset\+Manager}} $>$ G\+Engine\+::\+Core\+::get\+AM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a4d6394ab447ea86e53bf7140a1f07d5c}\label{struct_g_engine_1_1_core_a4d6394ab447ea86e53bf7140a1f07d5c}} 
+\index{GEngine::Core@{GEngine::Core}!getCam@{getCam}}
+\index{getCam@{getCam}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{getCam()}{getCam()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}} $>$ G\+Engine\+::\+Core\+::get\+Cam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_ad4b001c93518f9e206103895eaaeec8e}\label{struct_g_engine_1_1_core_ad4b001c93518f9e206103895eaaeec8e}} 
+\index{GEngine::Core@{GEngine::Core}!getKeyboard@{getKeyboard}}
+\index{getKeyboard@{getKeyboard}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{getKeyboard()}{getKeyboard()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_keyboard}{Keyboard}} $>$ G\+Engine\+::\+Core\+::get\+Keyboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_ad3a465487c3d3b3da7a4ff2db81a8c61}\label{struct_g_engine_1_1_core_ad3a465487c3d3b3da7a4ff2db81a8c61}} 
+\index{GEngine::Core@{GEngine::Core}!getScreen@{getScreen}}
+\index{getScreen@{getScreen}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{getScreen()}{getScreen()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_screen}{Screen}} $>$ G\+Engine\+::\+Core\+::get\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_acfa06d27625bdf3b3c3547b33e10b25e}\label{struct_g_engine_1_1_core_acfa06d27625bdf3b3c3547b33e10b25e}} 
+\index{GEngine::Core@{GEngine::Core}!initialiseSDL@{initialiseSDL}}
+\index{initialiseSDL@{initialiseSDL}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{initialiseSDL()}{initialiseSDL()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Core\+::initialise\+S\+DL (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$}]{\+\_\+rtnu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a6606c56b1ee4995956e46c1a0034371a}\label{struct_g_engine_1_1_core_a6606c56b1ee4995956e46c1a0034371a}} 
+\index{GEngine::Core@{GEngine::Core}!initialize@{initialize}}
+\index{initialize@{initialize}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ G\+Engine\+::\+Core\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a6ed14a1a1bd97a55881b6cd54405a50d}\label{struct_g_engine_1_1_core_a6ed14a1a1bd97a55881b6cd54405a50d}} 
+\index{GEngine::Core@{GEngine::Core}!initializeOpenAL@{initializeOpenAL}}
+\index{initializeOpenAL@{initializeOpenAL}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{initializeOpenAL()}{initializeOpenAL()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Core\+::initialize\+Open\+AL (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$}]{\+\_\+rtn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_ae0d31f9e1782037dbf22ba61d353bb15}\label{struct_g_engine_1_1_core_ae0d31f9e1782037dbf22ba61d353bb15}} 
+\index{GEngine::Core@{GEngine::Core}!loop@{loop}}
+\index{loop@{loop}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Core\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a80fd28d2e49f9da7ffa27dbd2f33087c}\label{struct_g_engine_1_1_core_a80fd28d2e49f9da7ffa27dbd2f33087c}} 
+\index{GEngine::Core@{GEngine::Core}!start@{start}}
+\index{start@{start}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Core\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_core_aeaa328bd2fab5354d90d83617fbcef5a}\label{struct_g_engine_1_1_core_aeaa328bd2fab5354d90d83617fbcef5a}} 
+\index{GEngine::Core@{GEngine::Core}!GEngine::Camera@{GEngine::Camera}}
+\index{GEngine::Camera@{GEngine::Camera}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{GEngine::Camera}{GEngine::Camera}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_g_engine_1_1_camera}{G\+Engine\+::\+Camera}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a74b7bea37f9b8598a3c2a0af0437d920}\label{struct_g_engine_1_1_core_a74b7bea37f9b8598a3c2a0af0437d920}} 
+\index{GEngine::Core@{GEngine::Core}!GEngine::Renderer@{GEngine::Renderer}}
+\index{GEngine::Renderer@{GEngine::Renderer}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{GEngine::Renderer}{GEngine::Renderer}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_g_engine_1_1_renderer}{G\+Engine\+::\+Renderer}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_core_addc033e6bd7ef8d656d3ad0c8ec8a851}\label{struct_g_engine_1_1_core_addc033e6bd7ef8d656d3ad0c8ec8a851}} 
+\index{GEngine::Core@{GEngine::Core}!AM@{AM}}
+\index{AM@{AM}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{AM}{AM}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_asset_manager}{Asset\+Manager}}$>$ G\+Engine\+::\+Core\+::\+AM\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a6cf11c6f4b4e93d3e5f54816992dbf65}\label{struct_g_engine_1_1_core_a6cf11c6f4b4e93d3e5f54816992dbf65}} 
+\index{GEngine::Core@{GEngine::Core}!cameraVec@{cameraVec}}
+\index{cameraVec@{cameraVec}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{cameraVec}{cameraVec}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}}$>$ $>$ G\+Engine\+::\+Core\+::camera\+Vec\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a84962b1599632042fe86fde0f5698723}\label{struct_g_engine_1_1_core_a84962b1599632042fe86fde0f5698723}} 
+\index{GEngine::Core@{GEngine::Core}!context@{context}}
+\index{context@{context}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$rend\+::\+Context$>$ G\+Engine\+::\+Core\+::context\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a0e4aaaa683a717c273aba0a40da5adc0}\label{struct_g_engine_1_1_core_a0e4aaaa683a717c273aba0a40da5adc0}} 
+\index{GEngine::Core@{GEngine::Core}!contextAud@{contextAud}}
+\index{contextAud@{contextAud}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{contextAud}{contextAud}}
+{\footnotesize\ttfamily A\+L\+Ccontext$\ast$ G\+Engine\+::\+Core\+::context\+Aud\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_aeeca5dca2d5d9f02de6e00b83672f05b}\label{struct_g_engine_1_1_core_aeeca5dca2d5d9f02de6e00b83672f05b}} 
+\index{GEngine::Core@{GEngine::Core}!curCam@{curCam}}
+\index{curCam@{curCam}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{curCam}{curCam}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_camera}{Camera}}$>$ G\+Engine\+::\+Core\+::cur\+Cam\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a947118da6d3f7673525d6f7de4b836e3}\label{struct_g_engine_1_1_core_a947118da6d3f7673525d6f7de4b836e3}} 
+\index{GEngine::Core@{GEngine::Core}!device@{device}}
+\index{device@{device}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily A\+L\+Cdevice$\ast$ G\+Engine\+::\+Core\+::device\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a2ba9bd8da09cd7c81ef3bdff54d1aeda}\label{struct_g_engine_1_1_core_a2ba9bd8da09cd7c81ef3bdff54d1aeda}} 
+\index{GEngine::Core@{GEngine::Core}!entities@{entities}}
+\index{entities@{entities}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{entities}{entities}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}}$>$ $>$ G\+Engine\+::\+Core\+::entities\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a2703774d1c1529cf51924e0cb0e7a508}\label{struct_g_engine_1_1_core_a2703774d1c1529cf51924e0cb0e7a508}} 
+\index{GEngine::Core@{GEngine::Core}!glContext@{glContext}}
+\index{glContext@{glContext}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{glContext}{glContext}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+G\+L\+Context G\+Engine\+::\+Core\+::gl\+Context\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a72b669e73168af4147198e3aa09b3ef9}\label{struct_g_engine_1_1_core_a72b669e73168af4147198e3aa09b3ef9}} 
+\index{GEngine::Core@{GEngine::Core}!keyB@{keyB}}
+\index{keyB@{keyB}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{keyB}{keyB}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_keyboard}{Keyboard}}$>$ G\+Engine\+::\+Core\+::keyB\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a87f7c355794432644fdaa4192153160b}\label{struct_g_engine_1_1_core_a87f7c355794432644fdaa4192153160b}} 
+\index{GEngine::Core@{GEngine::Core}!screen@{screen}}
+\index{screen@{screen}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{screen}{screen}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_screen}{Screen}}$>$ G\+Engine\+::\+Core\+::screen\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a10d2fc69ace746f8ba4172d4796ebc50}\label{struct_g_engine_1_1_core_a10d2fc69ace746f8ba4172d4796ebc50}} 
+\index{GEngine::Core@{GEngine::Core}!self@{self}}
+\index{self@{self}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{self}{self}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_core}{Core}}$>$ G\+Engine\+::\+Core\+::self\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_core_a3fc9f79e395c75a92a0d294d06dc46d3}\label{struct_g_engine_1_1_core_a3fc9f79e395c75a92a0d294d06dc46d3}} 
+\index{GEngine::Core@{GEngine::Core}!window@{window}}
+\index{window@{window}!GEngine::Core@{GEngine::Core}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ G\+Engine\+::\+Core\+::window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+G\+Engine/\mbox{\hyperlink{_core_8h}{Core.\+h}}\item 
+src/\+G\+Engine/\mbox{\hyperlink{_core_8cpp}{Core.\+cpp}}\end{DoxyCompactItemize}

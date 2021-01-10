@@ -18,6 +18,7 @@ namespace GEngine
 	struct Entity;
 	struct Camera;
 	struct Model;
+	struct Shader;
 
 	/**
 	* Engine base class, essential classes, managers and resources are linked and executed here.
@@ -28,6 +29,7 @@ namespace GEngine
 	{
 		friend struct GEngine::Renderer; //friend structs limiting the access
 		friend struct GEngine::Model; //but gives full access to specified classes.
+		friend struct GEngine::Shader;
 		static std::shared_ptr<Core> initialize();
 
 

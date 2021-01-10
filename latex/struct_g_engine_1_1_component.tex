@@ -1,0 +1,143 @@
+\hypertarget{struct_g_engine_1_1_component}{}\doxysection{G\+Engine\+::Component Struct Reference}
+\label{struct_g_engine_1_1_component}\index{GEngine::Component@{GEngine::Component}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+Inheritance diagram for G\+Engine\+::Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.879195cm]{struct_g_engine_1_1_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{struct_g_engine_1_1_component_a7b16a5bdc30dda264e5084f3e25a5aa4}{on\+Initialize}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_component_a5a7e3b66552d18951a7d5be7c15e2fb5}{tick}} ()
+\begin{DoxyCompactList}\small\item\em Base for each component that will be initialized. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{struct_g_engine_1_1_component_a0d859a3d208aec8837aef8d4aa5b6e1b}{on\+Tick}} ()
+\item 
+void \mbox{\hyperlink{struct_g_engine_1_1_component_acee571f5a1ae4a0c45240e696c342200}{render}} ()
+\item 
+virtual void \mbox{\hyperlink{struct_g_engine_1_1_component_ab11506f758454bb2a29f6843dc03e493}{on\+Render}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_component_ac5082946afcfd92680c935881be0631a}{get\+Entity}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_component_ae697bcd9a75b00974aa71fb23f272f95}{get\+Core}} ()
+\item 
+glm\+::mat4 \mbox{\hyperlink{struct_g_engine_1_1_component_ac0252851b30fb8a20a93c65dd8f4115c}{get\+Model\+Matrix}} ()
+\item 
+glm\+::mat4 \mbox{\hyperlink{struct_g_engine_1_1_component_a54095b3a9216a3d11636331d4bee9a69}{get\+Projection\+Matrix}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_g_engine_1_1_component_aca0069e6cebbb416f671ed6e0a9bfa46}{entity}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_engine_1_1_component_a99e6425bf4b5cdbd2a27c3ac884b2a93}{G\+Engine\+::\+Entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the base class for any component that any object added to \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} will inherit. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_component_ae697bcd9a75b00974aa71fb23f272f95}\label{struct_g_engine_1_1_component_ae697bcd9a75b00974aa71fb23f272f95}} 
+\index{GEngine::Component@{GEngine::Component}!getCore@{getCore}}
+\index{getCore@{getCore}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{getCore()}{getCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_core}{Core}} $>$ G\+Engine\+::\+Component\+::get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_ac5082946afcfd92680c935881be0631a}\label{struct_g_engine_1_1_component_ac5082946afcfd92680c935881be0631a}} 
+\index{GEngine::Component@{GEngine::Component}!getEntity@{getEntity}}
+\index{getEntity@{getEntity}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}} $>$ G\+Engine\+::\+Component\+::get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_ac0252851b30fb8a20a93c65dd8f4115c}\label{struct_g_engine_1_1_component_ac0252851b30fb8a20a93c65dd8f4115c}} 
+\index{GEngine::Component@{GEngine::Component}!getModelMatrix@{getModelMatrix}}
+\index{getModelMatrix@{getModelMatrix}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{getModelMatrix()}{getModelMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 G\+Engine\+::\+Component\+::get\+Model\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_a54095b3a9216a3d11636331d4bee9a69}\label{struct_g_engine_1_1_component_a54095b3a9216a3d11636331d4bee9a69}} 
+\index{GEngine::Component@{GEngine::Component}!getProjectionMatrix@{getProjectionMatrix}}
+\index{getProjectionMatrix@{getProjectionMatrix}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{getProjectionMatrix()}{getProjectionMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 G\+Engine\+::\+Component\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_a7b16a5bdc30dda264e5084f3e25a5aa4}\label{struct_g_engine_1_1_component_a7b16a5bdc30dda264e5084f3e25a5aa4}} 
+\index{GEngine::Component@{GEngine::Component}!onInitialize@{onInitialize}}
+\index{onInitialize@{onInitialize}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{onInitialize()}{onInitialize()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Component\+::on\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_g_engine_1_1_transform_a9a0148823aacdbeec5780527a0e5f574}{G\+Engine\+::\+Transform}}, \mbox{\hyperlink{struct_g_engine_1_1_renderer_a606b96ab09142b4989463c4cdf5ded6f}{G\+Engine\+::\+Renderer}}, and \mbox{\hyperlink{struct_g_engine_1_1_camera_aa9b29a718c2d74380c78293c599c40a5}{G\+Engine\+::\+Camera}}.
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_ab11506f758454bb2a29f6843dc03e493}\label{struct_g_engine_1_1_component_ab11506f758454bb2a29f6843dc03e493}} 
+\index{GEngine::Component@{GEngine::Component}!onRender@{onRender}}
+\index{onRender@{onRender}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{onRender()}{onRender()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Component\+::on\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_g_engine_1_1_renderer_a72769621d105bc95b9a91577961e448d}{G\+Engine\+::\+Renderer}}.
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_a0d859a3d208aec8837aef8d4aa5b6e1b}\label{struct_g_engine_1_1_component_a0d859a3d208aec8837aef8d4aa5b6e1b}} 
+\index{GEngine::Component@{GEngine::Component}!onTick@{onTick}}
+\index{onTick@{onTick}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{onTick()}{onTick()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Component\+::on\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_g_engine_1_1sound_source_a6d7868db00c9446c480f97563f2cd114}{G\+Engine\+::sound\+Source}}.
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_acee571f5a1ae4a0c45240e696c342200}\label{struct_g_engine_1_1_component_acee571f5a1ae4a0c45240e696c342200}} 
+\index{GEngine::Component@{GEngine::Component}!render@{render}}
+\index{render@{render}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Component\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_g_engine_1_1_component_a5a7e3b66552d18951a7d5be7c15e2fb5}\label{struct_g_engine_1_1_component_a5a7e3b66552d18951a7d5be7c15e2fb5}} 
+\index{GEngine::Component@{GEngine::Component}!tick@{tick}}
+\index{tick@{tick}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void G\+Engine\+::\+Component\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Base for each component that will be initialized. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_component_a99e6425bf4b5cdbd2a27c3ac884b2a93}\label{struct_g_engine_1_1_component_a99e6425bf4b5cdbd2a27c3ac884b2a93}} 
+\index{GEngine::Component@{GEngine::Component}!GEngine::Entity@{GEngine::Entity}}
+\index{GEngine::Entity@{GEngine::Entity}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{GEngine::Entity}{GEngine::Entity}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_g_engine_1_1_entity}{G\+Engine\+::\+Entity}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_g_engine_1_1_component_aca0069e6cebbb416f671ed6e0a9bfa46}\label{struct_g_engine_1_1_component_aca0069e6cebbb416f671ed6e0a9bfa46}} 
+\index{GEngine::Component@{GEngine::Component}!entity@{entity}}
+\index{entity@{entity}!GEngine::Component@{GEngine::Component}}
+\doxysubsubsection{\texorpdfstring{entity}{entity}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_g_engine_1_1_entity}{Entity}}$>$ G\+Engine\+::\+Component\+::entity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+G\+Engine/\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
+src/\+G\+Engine/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

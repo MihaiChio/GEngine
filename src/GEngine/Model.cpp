@@ -15,7 +15,7 @@ namespace GEngine
 		std::ifstream file(_path + ".obj");
 		if (!file.is_open())
 		{
-			throw Exception::Exception("Failed to find file");
+			throw Exception::Exception("Model not found");
 		}
 
 		while (!file.eof())
