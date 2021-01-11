@@ -12,7 +12,7 @@ namespace GEngine
 	{
 		shader = getAM().lock()->getCore()->context->createShader();
 		//creating the shader from the core context.
-
+		
 		std::ifstream file(_path);
 		if (!file.is_open())
 		{
@@ -22,7 +22,7 @@ namespace GEngine
 		while (!file.eof())
 		{
 			std::getline(file, line);
-			content += line + "\n";
+			content.append(line + "\n");
 		}
 
 		shader->parse(content);

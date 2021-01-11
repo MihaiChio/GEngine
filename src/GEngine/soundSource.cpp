@@ -24,9 +24,11 @@ namespace GEngine
 	}
 	void soundSource::playSound()
 	{
+		alListenerfv(AL_POSITION, listenerPos);
 		if(!isPlaying())
 		{
 			alSourcePlay(soundID);
+			
 		}
 	}
 	//todo Delete, Play, 
@@ -35,6 +37,11 @@ namespace GEngine
 		ALenum state = 0;
 		alGetSourcei(soundID, AL_SOURCE_STATE, &state);
 		return(state == AL_PLAYING);
+	}
+
+	void soundSource::setX(float _xPosAudio)
+	{
+		z += _xPosAudio;
 	}
 
 	void soundSource::deleteSound()

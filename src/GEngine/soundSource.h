@@ -12,8 +12,13 @@ namespace GEngine
 		void playSound();
 		void deleteSound();
 		bool isPlaying();
+		void setX(float _xPosAudio);
 
 	private:
+		float x, y, z = 0;
 		ALuint soundID;		
+		ALfloat listenerPos[3] = { x,y,z };
 	};
+	//TODO -> Try to add positional sound
+	//TODO -> Try to add Textures
 }

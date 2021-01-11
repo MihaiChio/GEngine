@@ -71,12 +71,9 @@ namespace GEngine
 				{
 					return rtn;
 				}
-				else
-				{
-					return NULL;
-				}
 
 			}
+			return NULL; // testing 
 		}
 		
 		void render();

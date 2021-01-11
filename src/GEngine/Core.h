@@ -19,7 +19,7 @@ namespace GEngine
 	struct Camera;
 	struct Model;
 	struct Shader;
-
+	struct TextureMe;
 	/**
 	* Engine base class, essential classes, managers and resources are linked and executed here.
 	* This is needed for the engine to work.
@@ -30,6 +30,7 @@ namespace GEngine
 		friend struct GEngine::Renderer; //friend structs limiting the access
 		friend struct GEngine::Model; //but gives full access to specified classes.
 		friend struct GEngine::Shader;
+		friend struct GEngine::TextureMe;
 		static std::shared_ptr<Core> initialize();
 
 

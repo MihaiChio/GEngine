@@ -4,6 +4,7 @@
 #include "Exception.h"
 #include "Model.h"
 #include "Shader.h"
+#include "TextureMe.h"
 
 #include <iostream>
 #include <fstream>
@@ -22,8 +23,16 @@ namespace GEngine
 		shape = getCore()->context->createMesh();
 		std::shared_ptr<Model> object = getCore()->getAM()->load<Model>("../curuthers/curuthers");
 		shape = object->getMesh();
+
+
+		//wip
+		std::shared_ptr<TextureMe> myTex = getCore()->getAM()->load<TextureMe>("../curuthers/Whiskers_diffuse.png");
+		std::shared_ptr<rend::Texture> rendTex = std::make_shared<rend::Texture>(); 
+		//HAS TO BE INSTANTIATED (CLASS).
+		rendTex->setId(myTex->getTextureId());
+		shape->setTexture("in_Texture", rendTex);
 		//Creates Object.
-		//TODO  - move shader and model into their own loader.
+		//TODO  - Create a texture loader.
 	}
 
 	void Renderer::onRender()

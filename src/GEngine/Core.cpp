@@ -25,7 +25,7 @@ namespace GEngine
 			return rtn;
 		}
 
-		std::shared_ptr<Entity> Core::addEntity()
+			std::shared_ptr<Entity> Core::addEntity()
 		{
 			std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 			rtn->core = self;
