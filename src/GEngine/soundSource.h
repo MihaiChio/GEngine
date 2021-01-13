@@ -12,7 +12,6 @@ namespace GEngine
 		void playSound();
 		void deleteSound();
 		bool isPlaying();
-		void setX(float _xPosAudio);
 
 	private:
 		float x, y, z = 0;

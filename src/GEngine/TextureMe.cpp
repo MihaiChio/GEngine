@@ -32,7 +32,7 @@ namespace GEngine
 		}
 		else
 		{
-			throw Exception::Exception("Texture not loaded");
+			//throw Exception::Exception("Texture not loaded");
 		}
 		stbi_image_free(data);
 	}

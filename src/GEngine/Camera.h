@@ -11,6 +11,8 @@ namespace GEngine
 
 	private:
 		std::shared_ptr<rend::RenderTexture> rendTexture;
+		std::shared_ptr<Component> object; // might add this maybe mayvbe x2
+
 	};
 
 }

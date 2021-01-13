@@ -9,6 +9,7 @@
 #include "AssetManager.h"
 #include "Screen.h"
 #include "Keyboard.h"
+#include "Gamepad.h"
 
 namespace GEngine
 {
@@ -42,6 +43,7 @@ namespace GEngine
 		std::shared_ptr<Screen> getScreen();
 		std::shared_ptr<AssetManager> getAM();
 		std::shared_ptr<Keyboard> getKeyboard();
+		std::shared_ptr<Gamepad> getGamepad();
 		std::shared_ptr<Camera> getCam();
 		static void loop();
 
@@ -49,6 +51,7 @@ namespace GEngine
 
 		friend struct GEngine::Camera;
 		std::shared_ptr<Keyboard> keyB;
+		std::shared_ptr<Gamepad> gameButton;
 		std::shared_ptr<AssetManager> AM;
 		std::vector<std::shared_ptr<Entity>> entities; // only needs to know that the "entity" struct exists. HAS TO BE DEFINED BEFORE ACCESSED.
 		std::vector <std::weak_ptr<Camera>> cameraVec;

@@ -4,7 +4,7 @@
 #ifdef EMSCRIPTEN
 	#include <emscripten.h>
 #endif
-namespace GEngine
+namespace GEngine //BOUNDING BOXES - COLLISION TODO
 {
 		std::weak_ptr<Core> _core; // to avoid a loop problem with emscripten.
 		std::shared_ptr<Core> Core::initialize()
@@ -20,6 +20,7 @@ namespace GEngine
 			rtn->AM->setCore(rtn);
 			rtn->AM->setSelf(rtn->AM); // sets asset manager self to the one refered in here.
 			rtn->keyB = std::make_shared<Keyboard>();
+			rtn->gameButton = std::make_shared<Gamepad>();
 
 			_core = rtn;
 			return rtn;
@@ -40,6 +41,7 @@ namespace GEngine
 			return rtn;
 		}
 
+
 		void Core::initialiseSDL(std::shared_ptr<Core> _rtnu)
 		{
 			_rtnu -> window = SDL_CreateWindow("G Engine", 
@@ -52,15 +54,19 @@ namespace GEngine
 				//Implement exceptions class.
 			}
 
-
+			// this is done to read from gamepad.
+			if (SDL_Init(SDL_INIT_JOYSTICK) < 0)
+			{
+				throw Exception::Exception("Joystick not initialized");
+			}
+			SDL_JoystickEventState(SDL_ENABLE);
 			_rtnu -> glContext = SDL_GL_CreateContext(window);
-
-
 			_rtnu->context = rend::Context::initialize();
 			if (!glContext)
 			{
 				//Error message
 			}
+
 
 			
 		}
@@ -102,6 +108,8 @@ namespace GEngine
 
 			while (SDL_PollEvent(&e) != 0)
 			{
+
+				SDL_JoystickUpdate();
 				if (e.type == SDL_QUIT)
 				{
 					isRunning = false;
@@ -114,6 +122,40 @@ namespace GEngine
 				{
 					_core.lock()->keyB->removeKey(e.key.keysym.sym);
 				}
+				else if (e.type == SDL_JOYAXISMOTION) // AXIS X-Y For controller..
+				{
+					if (e.jaxis.which == 0)
+					{
+						//X MOTION
+						if (e.jaxis.axis == 0)
+						{
+							if (e.jaxis.value < -8000)
+							{
+								
+							}
+							else if (e.jaxis.value > 8000)
+							{
+								_core.lock()->gameButton->buttons.push_back(e.jaxis.value);
+							}
+							else if (e.button.type)
+							{
+
+							}
+
+						}
+					}
+				}
+				else if (e.type == SDL_JOYBUTTONDOWN) // BUTTONS FOR CONTROLLER.
+				{
+					_core.lock()->gameButton->buttons.push_back(e.jbutton.button);
+					std::cout << e.jbutton.button << std::endl;
+				}
+				else if (e.type == SDL_JOYBUTTONUP)
+				{
+					_core.lock()->gameButton->removeInput(e.jbutton.button);
+					//std::cout << " BUTTON WAS RELEASED" << std::endl;
+				}
+
 			}
 			for (size_t ei = 0; ei < _core.lock()->entities.size(); ei++)
 			{
@@ -122,7 +164,8 @@ namespace GEngine
 			glClearColor(0.39f, 0.58f, 0.93f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			glViewport(0, 0, _core.lock()->screen->getResX(), _core.lock()->screen->getResY());
-			//TODO CAMERA IMPLEMENT
+
+
 			for (size_t ci = 0; ci < _core.lock()->cameraVec.size(); ci++)
 			{
 				_core.lock()->curCam = _core.lock()->cameraVec.at(ci);
@@ -144,7 +187,8 @@ namespace GEngine
 			
 						emscripten_set_main_loop(Core::loop, 0, 1);	
 			#else
-						while (true)
+			//getGamepad()->loadJoystick();
+						while (true)//TODO -> MAke variable
 						{
 							loop();
 						}
@@ -180,6 +224,10 @@ namespace GEngine
 		 std::shared_ptr<Keyboard> Core::getKeyboard()
 		 {
 			 return self.lock()->keyB;
+		 }
+		 std::shared_ptr<Gamepad> Core::getGamepad()
+		 {
+			 return self.lock()->gameButton;
 		 }
 
 

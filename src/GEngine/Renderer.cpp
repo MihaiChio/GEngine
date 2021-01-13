@@ -11,22 +11,20 @@
 
 namespace GEngine
 {
-
-	void Renderer::onInitialize()
+	void Renderer::onInitialize(const std::string _pathToModel, const std::string _pathToTexture) // path to texture has to contain .type.
 	{
-		std::cout << "Initializing" << std::endl;
 
 		shader = getCore()->context->createShader();
 		std::shared_ptr<Shader> shaderFile = getCore()->getAM()->load<Shader>("../shaders/shader.frag");
 		shader = shaderFile->getShader();
 
 		shape = getCore()->context->createMesh();
-		std::shared_ptr<Model> object = getCore()->getAM()->load<Model>("../curuthers/curuthers");
+		std::shared_ptr<Model> object = getCore()->getAM()->load<Model>(_pathToModel);
 		shape = object->getMesh();
 
 
 		//wip
-		std::shared_ptr<TextureMe> myTex = getCore()->getAM()->load<TextureMe>("../curuthers/Whiskers_diffuse.png");
+		std::shared_ptr<TextureMe> myTex = getCore()->getAM()->load<TextureMe>(_pathToTexture);
 		std::shared_ptr<rend::Texture> rendTex = std::make_shared<rend::Texture>(); 
 		//HAS TO BE INSTANTIATED (CLASS).
 		rendTex->setId(myTex->getTextureId());

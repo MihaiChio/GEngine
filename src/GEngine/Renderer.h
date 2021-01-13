@@ -8,7 +8,9 @@ namespace GEngine
 
 	struct Renderer : public Component
 	{
-		void onInitialize();
+		Renderer() {};
+
+		void onInitialize(const std::string _pathToModel, const std::string _pathToTexture);
 		void onRender();
 
 	private:

@@ -8,7 +8,7 @@ namespace GEngine
 
 		int getResX();
 		int getResY();
-		glm::mat4 getProjectionMatrix(); // might not be the best option. Ask cosmin later.
+		glm::mat4 getProjectionMatrix(); // might not be the best option.
 	private:
 		int resX = 800;
 		int resY = 600;
